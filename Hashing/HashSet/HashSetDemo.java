@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class HashSetDemo {
-    
-
     public static void main(String[] args) {
         
         HashSet<Integer> set = new HashSet<>();  // Implimented by HashMap
