@@ -50,7 +50,7 @@ public class HashMapImplimentation {
                 
             for (Node node : ll) {
                 
-                if (node.key==key) {    
+                if (node.key==key) {    // if use for loop  then ll.get(i) method
                     return di;              // if key is found then return the data index
                 }
                 di++;
@@ -77,13 +77,13 @@ public class HashMapImplimentation {
                 n++;
             }
                
-            double lamda=n/N; // divide no. of Nodes by Size of Buckes arr
+            double lamda=n/N; // divide no. of Nodes by Size of Buckes arr ex: 9/4 =2.25 -> do subble size of lll 
 
             if(lamda>2.0){   // id any bucket have more than two elements then slw thw Hm
 
                 // Do Double the arr;
 
-                LinkedList<Node> oldBuckets[]=buckets;
+                LinkedList<Node> oldBuckets[]=buckets;      
                 buckets= new LinkedList[N*2];
                 N=N*2;
 
