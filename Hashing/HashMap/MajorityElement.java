@@ -19,6 +19,8 @@ public class MajorityElement {
             fmap.put(i, fmap.getOrDefault(i, 0)+1); // this return the value present at given key 
                                                                 //else return default value that er given in this case 0
 
+            // 1 : 1-> 2 -> 3 ->4
+            // 2 : 1  etc..
         }
 
         for (Integer i : fmap.keySet()) {
