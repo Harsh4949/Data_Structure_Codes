@@ -8,15 +8,21 @@ This repository is created to store and share my solutions to various DSA proble
 ## 📂 Repository Structure
 ```
 📦 DSA
- ┣ 📂 Arrays
- ┣ 📂 LinkedList
- ┣ 📂 Stack
+ ┣ 📂 ArrayList
+ ┣ 📂 Array_quetions
+ ┣ 📂 Backtracking
+ ┣ 📂 BasicProgram
+ ┣ 📂 BinarySearchTree
+ ┣ 📂 BinaryTree
+ ┣ 📂 BitManipulaiton
+ ┣ 📂 GreedyAlgorithms
+ ┣ 📂 Hashing
+ ┣ 📂 Heaps
+ ┣ 📂 LinkList
  ┣ 📂 Queue
  ┣ 📂 Recursion
- ┣ 📂 Sorting
- ┣ 📂 Searching
- ┣ 📂 DynamicProgramming
- ┣ 📂 Graphs
+ ┣ 📂 Stack
+ ┣ 📂 Stringque
  ┗ 📜 README.md
 ```
 
@@ -30,6 +36,12 @@ This repository is created to store and share my solutions to various DSA proble
 - Searching Algorithms
 - Dynamic Programming
 - Graph Algorithms
+- Backtracking
+- Greedy Algorithms
+- Hashing
+- Heaps
+- Bit Manipulation
+- Binary Trees & BST
 
 ## 🚀 How to Use
 1. Clone the repository:
