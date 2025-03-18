@@ -1,7 +1,6 @@
 
 import java.util.*;
 
-import org.junit.platform.engine.support.hierarchical.Node;
 
 public class BottomViewOfBT {
 

@@ -21,7 +21,7 @@ public class HashsetItration {
 
         //using Itrator
 
-        Iterator i = set.iterator();  // it retuen the itrator
+        Iterator<Integer> i = set.iterator();  // it retuen the itrator
 
         while (i.hasNext()) { // check nect elemnt it there or not 
             
