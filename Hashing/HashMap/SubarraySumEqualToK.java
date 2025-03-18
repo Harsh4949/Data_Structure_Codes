@@ -20,7 +20,8 @@ public class SubarraySumEqualToK {
             
             if (sumMap.containsKey(sum-K)) {  // 20 22 20 0 10 
 
-                ans+=sumMap.get(sum-K);  
+                ans+=sumMap.get(sum-K);  // ans++; aslo considered... see logic in image
+                //ans++;
             }
 
                 sumMap.put(sum, sumMap.getOrDefault(sum, 0)+1); // 0:3 ,10 : 2 , 12:1 ,
@@ -32,8 +33,10 @@ public class SubarraySumEqualToK {
 
     public static void main(String[] args) {
         
-        int[] arr={10,2,-2,-20,10};
+        int[] arr={10,2,-2,-20,10}; 
+        int[] arr2={10,7,4,5,20}; 
 
-        System.out.println(" Number Subarrays With Sum -10 : "+subarraySumEqualToK(arr,-10 ));
+        System.out.println(" Number Subaays With Sum -10 : "+subarraySumEqualToK(arr,-10 ));
+        System.out.println(" Number Subaays With Sum -10 : "+subarraySumEqualToK(arr2,9 ));
     }
 }

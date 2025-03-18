@@ -1,9 +1,15 @@
-import java.security.KeyStore.Entry;
+//import java.security.KeyStore.Entry;
 import java.util.*;
+
+    // this is aslo Done using DDLL where
+    // insertion done form front, if size is reach then delete form last and then add new one
+    // if get(value used geting) then remove it and add in front(coz it recently used)
+    // where HashMap<INteger(data),Node > store to acess the NOdes fastly
 
 class LRUCache {
 
-    LinkedHashMap<Integer,Integer> cache;
+    LinkedHashMap<Integer,Integer> cache;  
+
     int capacity=0;
     public LRUCache(int capacity) {
         
@@ -35,7 +41,7 @@ class LRUCache {
         }
 
         if (cache.size() >= capacity) {
-            
+
             int firstKey = cache.keySet().iterator().next(); // Find LRU key (first in LinkedHashMap)
 
             cache.remove(firstKey); // Remove LRU key
