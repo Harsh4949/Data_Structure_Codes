@@ -1,7 +1,4 @@
-package LinkList;
-
-import java.util.LinkedList;
-import java.util.Queue;
+package BinarySearchTree;
 
 public class PopulatingNextRightPointersEachNode {  // LogicON  [13 janury 2025] NootBOOK 
     
