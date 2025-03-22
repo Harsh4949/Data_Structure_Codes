@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import Backtracking.soduko;
 
 public class Graph_Traversal {
 
@@ -106,7 +105,7 @@ public class Graph_Traversal {
         visited[src]=true;      // make src visited
 
         // if neighbour not visited then call for it consider as faith it return result true false
-         
+
         for (int i = 0; i < graph[src].size(); i++) {
 
             int neighbour = graph[src].get(i).dest;
