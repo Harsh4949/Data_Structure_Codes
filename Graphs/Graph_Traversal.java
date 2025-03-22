@@ -106,9 +106,9 @@ public class Graph_Traversal {
 
         // if neighbour not visited then call for it consider as faith it return result true false
 
-        for (int i = 0; i < graph[src].size(); i++) {
+        for (int i = 0; i < graph[src].size(); i++) {  // for(int neighbour: graph(src) )
 
-            int neighbour = graph[src].get(i).dest;
+            int neighbour = graph[src].get(i).dest;   // not reqire in for each loop
                                                                     
              if (!visited[neighbour] &&  hasPath(graph, neighbour, visited, dest)) {
                 
