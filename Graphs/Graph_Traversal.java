@@ -49,13 +49,27 @@ public class Graph_Traversal {
         //Vertex 4
         graph[4].add(new Edge(4, 2, 2));
 
+        //Vertex 4
+        graph[5].add(new Edge(5, 5, 2));
+
     }
 
-    public static void bfs(ArrayList<Edge> graph[]){  //O(V+E)  // vertex , edges
+    public static void bfs(ArrayList<Edge>[] graph){
+
+        boolean visited[]=new boolean[graph.length];
+        
+        for (int i = 0; i < visited.length; i++) {
+            if (!visited[i]) {
+                bfsUtil(graph, i, visited);
+            }
+        }
+
+    }
+
+    public static void bfsUtil(ArrayList<Edge> graph[],int start,boolean visited[]){  //O(V+E)  // vertex , edges
 
         Queue<Integer> q= new LinkedList<>();
-        boolean visited[]=new boolean[graph.length];
-        q.add(0);  //src 0 to start
+        q.add(start);  //src 0 to start
 
         while (!q.isEmpty()) {
             
@@ -74,9 +88,18 @@ public class Graph_Traversal {
         }  
     }
 
-    
+    public static void dfs(ArrayList<Edge> graph[]){
 
-    public static void dfs(ArrayList<Edge> graph[], int curr,boolean visited[]){
+        boolean visited[]=new boolean[graph.length];
+        
+        for (int i = 0; i < visited.length; i++) {
+            if (!visited[i]) {
+                dfsUtil(graph, i, visited);
+            }
+        }
+    }
+
+    public static void dfsUtil(ArrayList<Edge> graph[], int curr,boolean visited[]){
 
         //visit
         System.out.print(curr+" ");
@@ -90,7 +113,7 @@ public class Graph_Traversal {
 
             if (!visited[e.dest]) {
                 
-                dfs(graph, e.dest, visited);
+                dfsUtil(graph, e.dest, visited);
             }
             
         }
@@ -133,11 +156,11 @@ public class Graph_Traversal {
          *                4
          */       
         
-        ArrayList<Edge> graph[]= new ArrayList[5];
+        ArrayList<Edge> graph[]= new ArrayList[6];
         createGraph(graph);
         //bfs(graph);
-        //dfs(graph, 0, new boolean[graph.length]);
+        dfs(graph);
 
-        System.out.println(hasPath(graph, 1, new boolean[graph.length], 4));
+       // System.out.println(hasPath(graph, 1, new boolean[graph.length], 4));
     }
 }
