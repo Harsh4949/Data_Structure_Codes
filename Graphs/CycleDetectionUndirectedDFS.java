@@ -55,6 +55,7 @@ public class CycleDetectionUndirectedDFS {
         }
         return false;
     }
+    
                 
     public static boolean detectCycleUtil(ArrayList<Edge>graph[],int src,int par,boolean visited[]) {
         
@@ -74,6 +75,7 @@ public class CycleDetectionUndirectedDFS {
             //case 2 : when Cycle occur when nbr is visited and src of nbr != parent
             else if (visited[nbr] && nbr != par) {
                 return true;
+
             }
 
             // Case 3 if parent do nothig that not make
