@@ -16,14 +16,14 @@ This repository is created to store and share my solutions to various DSA proble
  ┣ 📂 BinaryTree
  ┣ 📂 BitManipulaiton
  ┣ 📂 GreedyAlgorithms
+ ┣ 📂 Graph
  ┣ 📂 Hashing
  ┣ 📂 Heaps
  ┣ 📂 LinkList
  ┣ 📂 Queue
  ┣ 📂 Recursion
  ┣ 📂 Stack
- ┣ 📂 Stringque
- ┗ 📜 README.md
+ ┗ 📂 Stringque
 ```
 
 ## 📚 Topics Covered
@@ -36,6 +36,7 @@ This repository is created to store and share my solutions to various DSA proble
 - Searching Algorithms
 - Dynamic Programming
 - Graph Algorithms
+- Graph
 - Backtracking
 - Greedy Algorithms
 - Hashing
