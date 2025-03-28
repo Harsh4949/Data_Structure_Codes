@@ -1,18 +1,21 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.PriorityQueue;
 
 public class demoRun {
 
     public static void main(String[] args) {
         
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         int [] arr = {-3, 0, 2, 1};
 
-        for(int i : arr){
-            pq.add(i);
-        }
+        Arrays.sort(arr);
+        int pSum=0;
 
-        
+        for (int i=arr.length-1;i>=0;i--) {
+            pSum+=arr[i];
+            System.out.print(" "+pSum);
+        }
 
     }
     
