@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class AllPathsFromSourceToTarget {
 
-    static class  Edge {
+    static class Edge {
         int src;
         int dest;
 
