@@ -3,8 +3,8 @@ package Graphs;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
-public class DijkstraAlgorithm {
-
+public class DijkstraAlgorithm {  // IMP NOt for -ve weight ,Gives False Result... Due to that Bllman Ford Is used
+                                 // E + E log v
     static class Edge {
         int src;
         int dest;
