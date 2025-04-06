@@ -50,7 +50,7 @@ public class KruskalAlgorithm {
             }
         }
         
-        static int find(int x){
+        public static int find(int x){
 
             if (x== parent[x]) {
                 return x;
