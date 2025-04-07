@@ -56,7 +56,8 @@ public class StronglyConnectedComponents {
         for (Edge e : graph[cur]) {
             
             if (!visited[e.dest]) {
-                bfs(graph, e.dest, visited);
+                int nbr=e.dest;
+                bfs(graph,nbr , visited);
             }
         }
 
