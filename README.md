@@ -15,6 +15,7 @@ This repository is created to store and share my solutions to various DSA proble
  ┣ 📂 BinarySearchTree
  ┣ 📂 BinaryTree
  ┣ 📂 BitManipulaiton
+ ┣ 📂 DynamicProgramming
  ┣ 📂 GreedyAlgorithms
  ┣ 📂 Graph
  ┣ 📂 Hashing
