@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package DynamicProgramming.Type_1;
 
 public class FibnanciSeries {
     
