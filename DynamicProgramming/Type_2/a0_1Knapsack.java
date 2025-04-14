@@ -36,7 +36,7 @@ public class a0_1Knapsack {
         }
     }
     
-    public static int knapsackDPTab(int val[],int wt[],int W){
+    public static int knapsackDPTab(int val[],int wt[],int W){      //see dry run in nootbook Page : 22 jan 2025
 
         int[][]dp= new int[val.length+1][W+1];  // wxtra size taken for this base condition
         
@@ -62,7 +62,7 @@ public class a0_1Knapsack {
                     dp[i][j]=Math.max(incProfit, exeProfit);
 
                 } else {
-                     dp[i][j]=dp[i-1][j]; // exclude if weight is grater than capacity..
+                    dp[i][j]=dp[i-1][j]; // exclude if weight is grater than capacity..
                 }
             }
         }
