@@ -27,10 +27,11 @@ public class a0_1Knapsack {
     }
 
     public static void print(int [][] dp) {
-        
+        int i=0;
         for (int[] is : dp) {
+            System.out.print("i="+(i++)+" |");
             for (int is2 : is) {
-                System.out.print(is2+" ");
+                System.out.print(is2+" |");
             }
             System.out.println();
         }
