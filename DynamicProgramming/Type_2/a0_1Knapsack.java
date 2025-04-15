@@ -113,7 +113,7 @@ public class a0_1Knapsack {
 
         System.out.println(knapsackDPMemo(val, wt, W, val.length, dp));
         System.out.println(maxProfit(val, wt, W, val.length));
-System.out.println();
+        System.out.println();
         System.out.println(knapsackDPTab(val, wt, W));
     }
 }
