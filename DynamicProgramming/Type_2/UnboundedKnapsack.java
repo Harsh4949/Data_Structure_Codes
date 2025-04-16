@@ -39,7 +39,7 @@ public class UnboundedKnapsack {
     }
     
 
-    public static int unboundedKnapsackTab(int [] val, int wt[],int W){
+    public static int unboundedKnapsackTab(int [] val, int wt[],int W){     //see dry run in nootbook Page : 26 jan 2025
 
         int n=val.length;
         int dp[][]= new int[n+1][W+1];
