@@ -1,7 +1,5 @@
 package DynamicProgramming.Type_2;
 
-import DynamicProgramming.Type_2.a0_1Knapsack;
-
 public class CoinChange {
 
     // In this Quetion We have coins[]={2,5,3,6} and Sum 10
