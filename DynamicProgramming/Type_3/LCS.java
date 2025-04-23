@@ -3,6 +3,9 @@ import DynamicProgramming.Type_2.*;
 import java.util.Arrays;
 
 public class LCS {      //Longest Common Subsequence 
+
+    // in this Quetion We need to find //Longest Common Subsequence between Two String
+    //but The relative order Of the chracter Of the String are Must be same or incresingly
     
     public static int LCS(String str1,String str2,int n,int m) { // See Logic in LCSLogic.png image
         
