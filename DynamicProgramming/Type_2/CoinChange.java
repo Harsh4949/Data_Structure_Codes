@@ -1,6 +1,6 @@
 package DynamicProgramming.Type_2;
 
-public class CoinChange {
+public class CoinChange {       // See Dry run At nootbook 30 Jan 2025
 
     // In this Quetion We have coins[]={2,5,3,6} and Sum 10
     // we need to find the Number Of Ways(Using the combibnation Of Given Coins were One coin can Add Mutltiple Time)
