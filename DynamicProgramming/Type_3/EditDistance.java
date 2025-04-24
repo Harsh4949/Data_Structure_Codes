@@ -11,12 +11,12 @@ public class EditDistance {     // See the EditDistanceLogic.png for UnderStandi
         // initialization If any String Is empty Then
         //The Total Operartion Reqied is : Length Of Another String
 
-        for (int i = 0; i < n+1; i++) {      // Fill 0th row 
-            dp[0][i]=i;
+        for (int i = 0; i < n+1; i++) {      // Fill 0th column 
+            dp[i][0]=i;
         }
 
         for (int i = 1; i < m+1; i++) {   // Fill 0th column 
-            dp[i][0]=i;
+            dp[0][i]=i;
         }
 
         for (int i = 1; i < n+1; i++) {
@@ -48,6 +48,8 @@ public class EditDistance {     // See the EditDistanceLogic.png for UnderStandi
         System.out.println("Oprations Reqired To make 1st String As 2nd : "+editDistanceTab(str1, str2));
 
        // System.out.println("Oprations Reqired To make 1st String As 2nd : "+editDistanceTab("inention", "exection"));
+
+       //System.out.println("Oprations Reqired To make 1st String As 2nd : "+editDistanceTab("Pear", "sea"));
 
     }
 }
