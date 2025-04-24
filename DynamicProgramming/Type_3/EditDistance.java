@@ -49,7 +49,7 @@ public class EditDistance {     // See the EditDistanceLogic.png for UnderStandi
 
        // System.out.println("Oprations Reqired To make 1st String As 2nd : "+editDistanceTab("inention", "exection"));
 
-       //System.out.println("Oprations Reqired To make 1st String As 2nd : "+editDistanceTab("Pear", "sea"));
+       System.out.println("Oprations Reqired To make 1st String As 2nd : "+ editDistanceTab("Pear", "sea"));
 
     }
 }
