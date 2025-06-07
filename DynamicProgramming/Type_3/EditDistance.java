@@ -23,7 +23,7 @@ public class EditDistance {     // See the EditDistanceLogic.png for UnderStandi
             for (int j = 1; j < m+1; j++) {
                 
                 if (str1.charAt(i-1)==str2.charAt(j-1)) {      
-                    dp[i][j]=dp[i-1][j-1];      // No Opration Reqire If Both Char Same                } else {
+                    dp[i][j]=dp[i-1][j-1];      // No Opration Reqire If Both Char Same          
                     
                 }else{
 

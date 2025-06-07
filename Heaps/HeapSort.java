@@ -1,10 +1,9 @@
 package Heaps;
 
-import Stringque.replaceCharInString;
 
 public class HeapSort {   // refer AMG Diary also
     
-    // for asending oerder sort we need to create max heap  Default
+    // for asending oerder sort we need to create min heap  Default
     // for Desendind oerder sort we need to create max heap Default
 
     /*
