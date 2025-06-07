@@ -26,7 +26,7 @@ public class a0_1Knapsack {
         }
     }
 
-    public static void print(int [][] dp) {
+    public static void print(int[][] dp) {
         int i=0;
         for (int[] is : dp) {
             System.out.print("i="+(i++)+" |");
