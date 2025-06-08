@@ -59,13 +59,10 @@ public class CatalansNumber {
         dp[1]=1;
 
         for (int j = 2; j <= n; j++) {
-            
-            int ans=0;
-
+        
             for (int i = 0; i < j; i++) {
-                ans+=dp[i]*dp[j-i-1];
+                dp[j]+=dp[i]*dp[j-i-1];
             }
-            dp[j]=ans;
         }
         
         for (int i : dp) {
