@@ -78,7 +78,7 @@ public class MatrixChainMultiplication {
     }
 }
 
-//Dry Run : 
+//Dry Run mcmMemo : 
 /* 
     mcm(1, 4)
     ├── k=1
@@ -137,3 +137,207 @@ public class MatrixChainMultiplication {
     └── min(54, 51, 30) = ✅ **30**
 
 */
+
+/*
+ * Dry Run MCM Tab: 
+ * 
+
+        int arr[] = {1, 2, 3, 4, 3}; // n = 5
+        ```
+
+        This means we have 4 matrices:
+
+        * A1: 1×2
+        * A2: 2×3
+        * A3: 3×4
+        * A4: 4×3
+
+        ### 📘 **Key Understanding**
+
+        Let:
+
+        * `dp[i][j]` represent the **minimum cost** to multiply matrices from `i` to `j`.
+        * We use **bottom-up tabulation** with a matrix `dp[n][n]` where `n = arr.length`.
+
+        Initial setup:
+
+        * Diagonal `dp[i][i] = 0` because multiplying one matrix needs no cost.
+
+        ---
+
+        ## 🧮 **Dry Run with Key Variable Tracking**
+
+        ### 🔁 **Outer Loop**: `len` from 2 to 4
+
+        ---
+
+        ### ✅ `len = 2` (Window size = 2 matrices)
+
+        We compute costs for:
+
+        * `(1, 2)`
+        * `(2, 3)`
+        * `(3, 4)`
+
+        #### ➤ i = 1, j = 2
+
+            ```java
+            k = 1
+            cost1 = dp[1][1] = 0
+            cost2 = dp[2][2] = 0
+            cost3 = arr[0] * arr[1] * arr[2] = 1*2*3 = 6
+            dp[1][2] = 6
+            ```
+
+        #### ➤ i = 2, j = 3
+
+        ```java
+        k = 2
+        cost1 = 0, cost2 = 0
+        cost3 = 2*3*4 = 24
+        dp[2][3] = 24
+        ```
+
+        #### ➤ i = 3, j = 4
+
+        ```java
+        k = 3
+        cost1 = 0, cost2 = 0
+        cost3 = 3*4*3 = 36
+        dp[3][4] = 36
+        ```
+
+        📊 DP Matrix after `len = 2`:
+
+        ```
+            0 1  2  3  4
+        0 [ - -  -  -  - ]
+        1 [ - 0  6  -  - ]
+        2 [ - - 0 24  - ]
+        3 [ - - - 0 36 ]
+        4 [ - - - - 0 ]
+        ```
+
+        ---
+
+        ### ✅ `len = 3` (Window size = 3 matrices)
+
+        We compute costs for:
+
+        * `(1, 3)`
+        * `(2, 4)`
+
+        #### ➤ i = 1, j = 3
+
+        Try all k from 1 to 2
+
+        **k = 1**
+
+        ```java
+        cost1 = dp[1][1] = 0
+        cost2 = dp[2][3] = 24
+        cost3 = 1*2*4 = 8
+        total = 0 + 24 + 8 = 32
+        ```
+
+        **k = 2**
+
+        ```java
+        cost1 = dp[1][2] = 6
+        cost2 = dp[3][3] = 0
+        cost3 = 1*3*4 = 12
+        total = 6 + 0 + 12 = 18 → min
+        ```
+
+        ✅ dp\[1]\[3] = **18**
+
+        #### ➤ i = 2, j = 4
+
+        **k = 2**
+
+        ```java
+        cost1 = 0
+        cost2 = 36
+        cost3 = 2*3*3 = 18
+        total = 0 + 36 + 18 = 54
+        ```
+
+        **k = 3**
+
+        ```java
+        cost1 = 24
+        cost2 = 0
+        cost3 = 2*4*3 = 24
+        total = 24 + 0 + 24 = 48 → min
+        ```
+
+        ✅ dp\[2]\[4] = **48**
+
+        📊 DP Matrix after `len = 3`:
+
+        ```
+            0 1  2  3  4
+        0 [ - -  -  -  - ]
+        1 [ - 0  6 18  - ]
+        2 [ - - 0 24 48 ]
+        3 [ - - - 0 36 ]
+        4 [ - - - - 0 ]
+        ```
+
+        ---
+
+        ### ✅ `len = 4` (Window size = 4 matrices)
+
+        Only one full chain: `(1, 4)`
+
+        Try k = 1, 2, 3
+
+        **k = 1**
+
+        ```java
+        cost1 = dp[1][1] = 0
+        cost2 = dp[2][4] = 48
+        cost3 = 1*2*3 = 6
+        total = 0 + 48 + 6 = 54
+        ```
+
+        **k = 2**
+
+        ```java
+        cost1 = 6
+        cost2 = 36
+        cost3 = 1*3*3 = 9
+        total = 6 + 36 + 9 = 51
+        ```
+
+        **k = 3**
+
+        ```java
+        cost1 = 18
+        cost2 = 0
+        cost3 = 1*4*3 = 12
+        total = 18 + 0 + 12 = 30 → ✅ minimum
+        ```
+
+        ✅ dp\[1]\[4] = **30**
+
+        📊 Final DP Matrix:
+
+        ```
+            0 1  2  3  4
+        0 [ - -  -  -  - ]
+        1 [ - 0  6 18 30 ]
+        2 [ - - 0 24 48 ]
+        3 [ - - - 0 36 ]
+        4 [ - - - - 0 ]
+        ```
+
+        ---
+
+        ### ✅ Final Answer:
+
+        ```java
+        return dp[1][4] = 30
+        ```
+
+ */
