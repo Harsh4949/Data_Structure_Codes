@@ -1,5 +1,5 @@
 package Array_quetions;
-public class maxSubArrrymethods{
+public class maxSubArrryKadaneAlgo{
 
     public static void subArry_print(int numarry[]) {
         
@@ -80,27 +80,26 @@ public class maxSubArrrymethods{
             sum+=numarry[i];
 
             if(sum>maxsum){
-
-                maxsum=sum;
+                maxsum=sum;    //override value not add it
+                System.out.print(" "+ maxsum);
             }
 
-            if(sum<0){
-                sum=0;
+            if(sum<0){      // if any point sum is minus then it not contribute in in fianl sum so make it zero
+                sum=0;      // negative elemnt not contribute in sum
             }
         }
 
-        System.out.println("Max subarry sum is : "+maxsum);
+        System.out.println("\n Max subarry sum is : "+maxsum);
     }
 
     public static void main(String args[]){
 
         int numbers[]={-1,-2,6,1,3};
-
-         subArry_print(numbers);
+        subArry_print(numbers);
 
         // max_sub_arry(numbers); //worst solution to find max addtion of sub arry
 
-        //prifix_max_sub_arry(numbers); // //Average solution to find max addtion of sub arry
+        //prifix_max_sub_arry(numbers); // Average solution to find max addtion of sub arry
 
         kadane_max_sub_arry(numbers);   //Best solution to find max addtion of sub arry
  
