@@ -57,8 +57,37 @@ public class MatrixChainMultiplication {
         return dp[i][j]=ans;
     }
 
-    public static void mcmTab(int[] arr) {
+    public static int mcmTab(int[] arr) {
         
+        int n=arr.length;
+        int dp[][]= new int[n][n];
+
+        // initialize i==j =0 bydefult done by java
+
+        for(int len=2;len<=n-1;len++)
+        {
+            for (int i = 1; i <=n-len; i++) {        // 1 -->5-2= 3 row (1,2) (2,3) (3,4)
+                int j=i+len-1;                      // 1+2-1 = column 2 ,3, 4
+              
+                dp[i][j]=Integer.MAX_VALUE;
+                
+                for (int k=i; k <= j-1; k++) {
+                    
+                    int cost1=dp[i][k];
+                    int cost2=dp[k+1][j];
+
+                    int cost3=arr[i-1]*arr[k]*arr[j];
+                    int finalCost=cost1+cost2+cost3;
+
+                    dp[i][j]=Math.min(dp[i][j], finalCost);
+                    
+                }
+            }
+
+        }
+
+        a0_1Knapsack.print(dp);
+        return dp[1][n-1];
     }
     
     public static void main(String[] args) {
@@ -74,6 +103,8 @@ public class MatrixChainMultiplication {
 
         System.out.println(mcmMemo(arr, 1, n-1, dp));
        // a0_1Knapsack.print(dp);
+
+       System.out.println(mcmTab(arr));
 
     }
 }
