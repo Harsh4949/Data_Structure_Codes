@@ -23,6 +23,7 @@ This repository is created to store and share my solutions to various DSA proble
  ┣ 📂 LinkList
  ┣ 📂 Queue
  ┣ 📂 Recursion
+ ┣ 📂 SegmentTree
  ┣ 📂 Stack
  ┗ 📂 Stringque
 ```
@@ -44,6 +45,7 @@ This repository is created to store and share my solutions to various DSA proble
 - Heaps
 - Bit Manipulation
 - Binary Trees & BST
+- SegmentTree
 
 ## 🚀 How to Use
 1. Clone the repository:
