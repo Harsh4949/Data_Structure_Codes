@@ -26,6 +26,34 @@ public class SegmentTreeImpliment {
         return stree[i]=left+right;     // NOW WE handle two Node Addition
     }
 
+    public static int getSumUtil(int i,int si,int sj,int qi,int qj) {  // see the image for understnading "D:\Programming\vscodeProgram\SegmentTree\STQueryGetSum.jpg"
+        
+        if (qj<=si ||sj<=qi) {      //Case 1 if query Range not Overlap
+            return 0;  // Not include it
+
+        }
+        else if(qi<=si && sj<=qj){   //Case 2 if query Range Overlap 
+
+            return stree[i]; // add the node range(i.e si-sj)
+        }
+        else{   //parovetial Overlap
+            // divide it
+
+            int mid=(si+sj)/2;
+
+            int left=getSumUtil(2*i+1, si, mid, qi, qj);// left tree call
+            int right=getSumUtil(2*i+2, mid+1, sj, qi, qj);  // right tree call
+            
+            return left+right;
+        }
+    }
+
+    public static int getSum(int[] arr,int qi ,int qj) { //log n
+        
+        int n= arr.length;
+        return getSumUtil(0, 0, n-1, qi, qj);
+    }
+
     public static void printST(int[] args) {
 
         System.out.println();
@@ -45,5 +73,8 @@ public class SegmentTreeImpliment {
 
         printST(arr);
         printST(stree);
+
+        System.out.println(getSum(arr, 0, 3));
+        System.out.println(getSum(arr, 2, 5));
     }
 }
