@@ -8,7 +8,7 @@ public class SegmentTreeImpliment {
         stree=  new int[n*4];       // as per mentioned image "D:\Programming\vscodeProgram\SegmentTree\SegmentTreeLogic.jpg"
     }
     
-    public static int buildST(int arr[],int i,int st,int end) {
+    public static int buildST(int arr[],int i,int st,int end) { // O(n)
         
         if (st==end) {  // only one elemnt is remaining  here we handle signle NODE
             stree[i]=arr[st];
@@ -54,6 +54,36 @@ public class SegmentTreeImpliment {
         return getSumUtil(0, 0, n-1, qi, qj);
     }
 
+    public static void updateUtil(int i,int si,int sj,int idx,int diff) {
+        
+        if (idx<si ||sj<idx) {     // if idx does not lies Between Si-Sj // See Image StUpadateLogic.png
+            return;                         //Does not inclued 
+        }
+       
+        if (si==sj) {
+            stree[i]+=diff;
+            return;
+        }
+
+        stree[i]+=diff;
+
+        // if(si!=sj) it is also considered.
+        int mid=(si+sj)/2;
+        updateUtil(2*i+1, si, mid, idx, diff);
+        updateUtil(2*i+2, mid+1, sj, idx, diff);
+    }
+
+    public static void upadte(int[] arr,int idx,int newVal) {
+        
+        int diff= newVal-arr[idx]; // oldVal-newVal = Differce 
+        arr[idx]=newVal;
+        int n = arr.length;
+        updateUtil(0, 0, n-1, idx, diff);
+        System.out.println("Update Done Suscess fully");
+        printST(arr);
+       
+    }
+
     public static void printST(int[] args) {
 
         System.out.println();
@@ -74,7 +104,11 @@ public class SegmentTreeImpliment {
         printST(arr);
         printST(stree);
 
+        //System.out.println(getSum(arr, 0, 3));
+        System.out.println(getSum(arr, 2, 5));  // Dry run it for undertanding using STConstructionLogic.jpg Image
+
+        upadte(arr, 0, 9);
+        printST(stree);
         System.out.println(getSum(arr, 0, 3));
-        System.out.println(getSum(arr, 2, 5));
     }
 }
