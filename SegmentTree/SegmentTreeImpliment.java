@@ -28,7 +28,7 @@ public class SegmentTreeImpliment {
 
     public static int getSumUtil(int i,int si,int sj,int qi,int qj) {  // see the image for understnading "D:\Programming\vscodeProgram\SegmentTree\STQueryGetSum.jpg"
         
-        if (qj<=si ||sj<=qi) {      //Case 1 if query Range not Overlap
+        if (qj<si ||sj<qi) {      //Case 1 if query Range not Overlap
             return 0;  // Not include it
 
         }
