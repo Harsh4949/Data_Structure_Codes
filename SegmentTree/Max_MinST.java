@@ -49,11 +49,41 @@ public class Max_MinST {
         }
     }
 
-    
     public static int getMax(int[] arr,int qi,int qj) {
         
         int n = arr.length;
         return getMaxUtil(0, 0, n-1, qi, qj);
+    }
+ 
+    public static void updateMaxUtil(int i, int si,int sj,int idx,int newVal) {
+        
+        if (idx<si ||idx>sj) {
+            return;
+        }
+
+        //(si==sj){  stree[i]=Math.max(stree[i], newVal); return; } // it is also considered..
+
+        stree[i]=Math.max(stree[i], newVal);
+
+        if (si!=sj) {
+
+            int mid=(si+sj)/2;
+            
+            updateMaxUtil(2*i+1, si, mid, idx, newVal);
+            updateMaxUtil(2*i+2, mid+1, sj, idx, newVal);
+        }
+    }
+
+    public static void updateMax(int arr[],int idx,int newVal) {
+        
+        int n= arr.length;
+        arr[idx]=newVal;
+
+        System.out.println("Update Done SuccesFully...");
+        updateMaxUtil(0, 0, n-1, idx, newVal);
+
+        print(arr);
+        print(stree);
     }
 
     public static void main(String[] args) {
@@ -67,6 +97,8 @@ public class Max_MinST {
         print(stree);
 
         System.out.println(getMax(arr, 3, 3));
+
+        updateMax(arr, 1, 20);
 
     }
 }
