@@ -112,3 +112,6 @@ public class SegmentTreeImpliment {
         System.out.println(getSum(arr, 0, 3));
     }
 }
+
+
+// think about the

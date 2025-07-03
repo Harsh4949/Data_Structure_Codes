@@ -55,18 +55,18 @@ public class arry_quetions{
 
     public static void reverse_arry (int numarry[]) {
 
-        int start=0;
-        int end=numarry.length-1;
+        int left=0;
+        int right= numarry.length-1;
 
-        while(start<end){
-
-            int temp=numarry[start];
-            numarry[start]=numarry[end];
-            numarry[end]=temp;
-
-            start++;
-            end--;
+        while (left<right) {
+            
+            int temp=numarry[left];
+            numarry[left]=numarry[right];
+            numarry[right]=temp;
+            left++;
+            right--;
         }
+      
     }
 
     public static void pair_print(int numarry[]) {
@@ -119,15 +119,15 @@ public class arry_quetions{
         //     System.out.println("Element At index No. :"+index);
 
 
-        // reverse_arry(numbers);           //reverse arry
+        reverse_arry(numbers);           //reverse arry
 
-        // for(int i=0;i<numbers.length;i++)
-        //     System.out.print(numbers[i]+" ");
+        for(int i=0;i<numbers.length;i++)
+            System.out.print(numbers[i]+" ");
 
 
         // pair_print(numbers);              //print pair
 
-        subArry_print(numbers);
+        // subArry_print(numbers);
 
     }
 }
