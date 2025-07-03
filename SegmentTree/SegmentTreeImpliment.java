@@ -65,12 +65,12 @@ public class SegmentTreeImpliment {
             return;
         }
 
-        stree[i]+=diff;
-
         // if(si!=sj) it is also considered.
         int mid=(si+sj)/2;
         updateUtil(2*i+1, si, mid, idx, diff);
         updateUtil(2*i+2, mid+1, sj, idx, diff);
+
+        stree[i]+=diff;
     }
 
     public static void upadte(int[] arr,int idx,int newVal) {

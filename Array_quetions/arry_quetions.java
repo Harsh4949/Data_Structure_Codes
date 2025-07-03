@@ -1,19 +1,18 @@
 package Array_quetions;
+
 public class arry_quetions{
 
     public static int largest_num(int numarry[]){
 
-        int largest=0;
+       int largeEle=Integer.MIN_VALUE;
+       int smallestEle=Integer.MAX_VALUE;
 
-        for(int i=0;i<numarry.length;i++){
+       for (int i : numarry) {
+        
+            largeEle=(largeEle<i)?i:largeEle;
+       }
 
-            if(numarry[i]>largest){
-
-                largest=numarry[i];
-            }
-        }
-
-        return largest;
+       return largeEle;
 
     }
 
